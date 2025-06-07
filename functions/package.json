@@ -1,0 +1,11 @@
+
+{
+  "name": "firebase-functions",
+  "engines": { "node": "18" },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.10.1",
+    "firebase-functions": "^4.9.0",
+    "uuid": "^9.0.0"
+  }
+}

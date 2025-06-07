@@ -1,0 +1,18 @@
+const functions = require("firebase-functions");
+const register = require("./register");
+const login = require("./login");
+const startGame = require("./startGame");
+const endGame = require("./endGame");
+const getStats = require("./getStats");
+const uploadScreenshot = require("./uploadScreenshot");
+const processGameEvent = require("./processGameEvent");
+const dailyReward = require("./dailyReward");
+
+exports.register = functions.https.onRequest(register);
+exports.login = functions.https.onRequest(login);
+exports.startGame = functions.https.onRequest(startGame);
+exports.endGame = functions.https.onRequest(endGame);
+exports.getStats = functions.https.onRequest(getStats);
+exports.uploadScreenshot = functions.storage.object().onFinalize(uploadScreenshot);
+exports.processGameEvent = functions.https.onRequest(processGameEvent);
+exports.dailyReward = functions.pubsub.schedule("every 24 hours").onRun(dailyReward);
