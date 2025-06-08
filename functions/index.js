@@ -7,7 +7,9 @@ const getStats = require("./getStats");
 const uploadScreenshot = require("./uploadScreenshot");
 const processGameEvent = require("./processGameEvent");
 const dailyReward = require("./dailyReward");
+const onUserCreated = require("./onUserCreated");
 
+exports.onUserCreated = onUserCreated;
 exports.register = functions.https.onRequest(register);
 exports.login = functions.https.onRequest(login);
 exports.startGame = functions.https.onRequest(startGame);
